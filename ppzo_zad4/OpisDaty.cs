@@ -34,7 +34,7 @@ namespace ppzo_zad4
             
         }
         //Metoda validująca datę
-        public bool dateValidation()
+        private bool dateValidation()
         {
             bool confirm = false;
             if (this.Day > MonthLength() || this.Month >12)
@@ -55,7 +55,7 @@ namespace ppzo_zad4
             return fullData;
         }
         //metoda sprawdzająca rok przestępny
-        public bool LeapYearCheck(int year)
+        private bool LeapYearCheck(int year)
         {
             bool leapCheck = false;
             if (year % 4 == 0)
@@ -70,7 +70,7 @@ namespace ppzo_zad4
         }
 
         //metoda zwracająca długość miesiąca z uwzględnieniem roku przestępnego
-        public int MonthLength()
+        private int MonthLength()
         {
             int monthLength;
             switch (this.Month)
@@ -173,7 +173,7 @@ namespace ppzo_zad4
             }
         }
         //przeciążona metoda sprawdzająca długość dowolnego miesiąca
-        public int MonthLength(int month)
+        private int MonthLength(int month)
         {
             int monthLength;
             switch (month)
