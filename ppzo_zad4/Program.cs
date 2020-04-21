@@ -32,7 +32,7 @@ namespace ppzo_zad4
             Console.WriteLine("---------");
             //tworze obiekt niepoprawny
             OpisDaty errorDate = new OpisDaty(45, 13, 200);
-            errorDate.ShowData();
+            Console.WriteLine(errorDate.ShowData());
 
 
             Console.ReadLine();

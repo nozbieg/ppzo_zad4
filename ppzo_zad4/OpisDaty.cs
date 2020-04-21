@@ -17,27 +17,34 @@ namespace ppzo_zad4
         public OpisDaty(int day, int month, int year)
         {
            
-            this.Day = day;
-            this.Month = month;
-            this.Year = year;
+           
             try
             {
-                if (dateValidation() == false)
+                if (dateValidation(day,month,year) == false)
                 {
-                    Console.WriteLine("Błędnie skonstruowana data");
+                    throw new ArgumentException("Błędnie skonstruowana data");
+
+                }
+                else
+                {
+                    this.Day = day;
+                    this.Month = month;
+                    this.Year = year;
                 }
 
-            }catch(Exception ex)
+            }catch(ArgumentException x)
             {
-                throw ex;
+                Console.WriteLine(x);
             }
             
+
         }
+      
         //Metoda validująca datę
-        private bool dateValidation()
+        private bool dateValidation(int day, int month, int year)
         {
             bool confirm = false;
-            if (this.Day > MonthLength() || this.Month >12)
+            if (day > MonthLength() || month >12)
             {
                 confirm = false;
             }
