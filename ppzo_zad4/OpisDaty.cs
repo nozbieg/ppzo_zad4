@@ -11,7 +11,9 @@ namespace ppzo_zad4
         public int Day { get; set; }
         public int Month { get; set; }
         public int Year { get; set; }
-
+       
+        
+        //Konstruktor z validacją danych
         public OpisDaty(int day, int month, int year)
         {
            
@@ -31,7 +33,7 @@ namespace ppzo_zad4
             }
             
         }
-
+        //Metoda validująca datę
         public bool dateValidation()
         {
             bool confirm = false;
@@ -45,13 +47,14 @@ namespace ppzo_zad4
             }
             return confirm;
         }
-
+        //metoda pokazująca datę na ekranie
         public string ShowData()
         {
             string fullData = Day + "." + Month + "." + Year;
 
             return fullData;
         }
+        //metoda sprawdzająca rok przestępny
         public bool LeapYearCheck(int year)
         {
             bool leapCheck = false;
@@ -65,6 +68,8 @@ namespace ppzo_zad4
             }
             return leapCheck;
         }
+
+        //metoda zwracająca długość miesiąca z uwzględnieniem roku przestępnego
         public int MonthLength()
         {
             int monthLength;
@@ -120,6 +125,7 @@ namespace ppzo_zad4
             }
             return monthLength;
         }
+        //metoda dodająca 7 dni do daty
          public void addWeek()
         {
             int day = this.Day;
@@ -138,7 +144,7 @@ namespace ppzo_zad4
                 this.Month = 1;
             }
         }
-
+        //metoda odejmująca 7 dni od daty
         public void subWeek()
         {
             int day = this.Day;
@@ -166,6 +172,7 @@ namespace ppzo_zad4
                 this.Month = 12;
             }
         }
+        //przeciążona metoda sprawdzająca długość dowolnego miesiąca
         public int MonthLength(int month)
         {
             int monthLength;
